@@ -8,10 +8,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.js">
 	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-  
-	</script>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body>
@@ -27,12 +26,12 @@
           </div>
           <div class="collapse navbar-collapse" id="mymenu">
            <ul class= "nav navbar-nav">
-            <li><a id="homelink"href="refhome.html">Home</a></li>  
+            <li><a id="homelink"href="index.html">Home</a></li>  
            </ul>
            <ul class="nav navbar-nav navbar-right">
             <li><a href="index.html">Assignor Access</a></li>
             <li>
-              <a href="signin.html"><button class="btn btn-info" id="sign-in-button" onclick="signin.html">Sign In</button></a>
+              <a id="loginApp" href="signin.html"><button class="btn btn-info" id="sign-in-button" v-on:click="signIn">Sign In</button></a>
               </li>
             </ul>
           </div>
@@ -50,8 +49,7 @@
       </div>
     </main>
     <footer class="row">
-      Smart Hand Trucks, Inc. | (123) 456-7890 |
-         customer.support@smarttruck.com | 123 Real Plaza
+      Indiana Soccer Referees Association | (123) 456-7890 | 123 Real Plaza
     </footer>
   </body>
 </html>

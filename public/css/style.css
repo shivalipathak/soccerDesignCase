@@ -15,7 +15,7 @@
 
 .page{
   height: 650px;
-  background-image: url("images/IndianaLogo.png");
+  background-image: url("../images/IndianaLogo.png");
   background-repeat: no-repeat;
   background-position: center;
 }
