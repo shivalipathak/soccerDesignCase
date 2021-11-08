@@ -27,8 +27,8 @@
           <div class="collapse navbar-collapse" id="mymenu">
            <ul class= "nav navbar-nav">
             <li><a id="homelink"href="index.html">Home</a></li>
-            <li><a id="homelink"href="user.html">View referees</a></li>  
-            <li><a id="homelink"href="viewGames.html">View games</a></li>
+            <li><a id="homelink"href="user.html">View referees</a></li> 
+            <li><a id="homelink"href="viewGames.html">View games</a></li> 
            </ul>
            <ul class="nav navbar-nav navbar-right">
             <li><a href="assignorHome.html">Assignor Access</a></li>
@@ -42,21 +42,25 @@
     </header>
     <main class="row">
       <div class="page">
-        <div id = "refereeApp">
+        <div id = "gameApp">
         <table id="refereeTable" class="table table-hover table-dark">
             <thead>
                 <tr>
-                    <th scope="col" class="table-header">Refereee Name</th>
-                    <th scope="col" class="table-header">Referee Age</th>
-                    <th scope="col" class="table-header">Referee Grade</th>
+                    <th scope="col" class="table-header">Game Name</th>
+                    <th scope="col" class="table-header">Referee ID</th>
+                    <th scope="col" class="table-header">Field</th>
+                    <th scope="col" class="table-header">Date</th>
+                    <th scope="col" class="table-header">Time</th>
                 </tr>
             </thead>
 
-            <tbody v-for="r in referees">
+            <tbody v-for="g in games">
                 <tr>
-                    <th scope="row">{{ r.rName }}</th>
-                    <td>{{ r.rAge }}</td>
-                    <td>{{ r.rGrade }}</td>
+                    <th scope="row">{{ g.gameId }}</th>
+                    <td>{{ g.refereeId }}</td>
+                    <td>{{ g.field }}</td>
+                    <td>{{ g.date }}</td>
+                    <td>{{ g.time }}</td>
                 </tr>
             </tbody>
           </table>
@@ -68,6 +72,6 @@
     </footer>
     </div>
   </body>
-    <script src="js/referee.js"></script>
+    <script src="js/game.js"></script>
   </body>
 </html>

@@ -1,30 +1,30 @@
-const refereeApp = {
+const gameApp = {
     data() {
         return {
             result: undefined,
-            referees: [],
+            games: [],
             app:0,
-            refForm: {},
-            selectedRef: null,
+            gameForm: {},
+            selectedGame: null,
         }
     },
     methods: {
-        fetchRefereeData() {
-            fetch('/api/referee/')
+        fetchGameData() {
+            fetch('/api/game/')
             .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);
-                this.referees = responseJson;
+                this.games = responseJson;
             })
             .catch( (err) => {
                 console.error(err);
             })
         },
-        postNewRef(evt) {       
+        postNewGame(evt) {       
 
-            fetch('/api/referee/create.php', {
+            fetch('/api/game/create.php', {
                 method:'POST',
-                body: JSON.stringify(this.refForm),
+                body: JSON.stringify(this.gameForm),
                 headers: {
                 "Content-Type": "application/json; charset=utf-8"
                 }
@@ -33,24 +33,23 @@ const refereeApp = {
             .then( json => {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
-                this.referees = json;
+                this.games = json;
             
                 // reset the form
-                this.refForm = {};
+                this.gameForm = {};
             });
         },
-        postRef(evt) {
-            if (this.selectedRef === null) {
-                this.postNewRef(evt);
+        postGame(evt) {
+            if (this.selectedGame === null) {
+                this.postNewGame(evt);
             } else {
-                this.postEditRef(evt);
+                this.postEditGame(evt);
             }
           },
-        postEditRef(evt) {
-          alert(this.refForm.refereeId);
-            fetch('api/referee/update.php', {
+        postEditGame(evt) {
+            fetch('api/game/update.php', {
                 method:'POST',
-                body: JSON.stringify(this.refForm),
+                body: JSON.stringify(this.gameForm),
                 headers: {
                   "Content-Type": "application/json; charset=utf-8"
                 }
@@ -59,19 +58,19 @@ const refereeApp = {
               .then( json => {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
-                this.referees = json;
+                this.games = json;
     
                 // reset the form
-                this.resetRefForm();
+                this.resetGameForm();
               });
           },
-        postDeleteRef(ref) {
+        postDeleteGame(ref) {
             if (!confirm("Are you sure you want to delete the referee record?")) {
               return;
             }
             console.log("Delete!", ref);
     
-            fetch('api/referee/delete.php', {
+            fetch('api/game/delete.php', {
                 method:'POST',
                 body: JSON.stringify(ref),
                 headers: {
@@ -82,25 +81,25 @@ const refereeApp = {
               .then( json => {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
-                this.referees = json;
+                this.games = json;
     
                 // reset the form
-                this.resetRefForm();
+                this.resetGameForm();
               });
           },
-          selectedRefToEdit(ref) {
-            this.selectedRef = ref;
-            this.refForm = Object.assign({}, this.selectedRef);
+          selectedGameToEdit(ref) {
+            this.selectedGame = ref;
+            this.gameForm = Object.assign({}, this.selectedGame);
           },
           resetRefForm() {
-              this.selectedRef = null;
-              this.refForm = {};
+              this.selectedGame = null;
+              this.gameForm = {};
           }
     },
     created() {
-        this.fetchRefereeData();
+        this.fetchGameData();
     }
 }
   
-Vue.createApp(refereeApp).mount('#refereeApp');
+Vue.createApp(gameApp).mount('#gameApp');
 

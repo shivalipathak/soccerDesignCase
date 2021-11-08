@@ -35,7 +35,7 @@ $stmt = $db->prepare(
     rName = ?,
     rAge = ?,
     rSkill = ?,
-    rGrade = ?,
+    rGrade = ?
   WHERE refereeId = ?'
 );
 
