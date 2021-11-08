@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ISRA</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+
+<body>
+	<div class="container-fluid">
+		<header>
+			<nav class="row navbar navbar-default">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+          </div>
+          <div class="collapse navbar-collapse" id="mymenu">
+           <ul class= "nav navbar-nav">
+            <li><a id="homelink"href="index.html">Home</a></li>
+            <li><a id="homelink"href="user.html">View referees</a></li>  
+           </ul>
+           <ul class="nav navbar-nav navbar-right">
+            <li><a href="assignorHome.html">Assignor Access</a></li>
+            <li><a href="refhome.html">Referee Access</a></li> 
+            <li>
+              <a id="loginApp" href="signin.html"><button class="btn btn-info" id="sign-in-button" v-on:click="signIn">Sign in</button></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <main class="row">
+      <div class="page">
+        <div id = "refereeApp">
+        <table id="refereeTable" class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col" class="table-header">Refereee Name</th>
+                    <th scope="col" class="table-header">Referee Age</th>
+                    <th scope="col" class="table-header">Referee Grade</th>
+                </tr>
+            </thead>
+
+            <tbody v-for="r in referees">
+                <tr>
+                    <th scope="row">{{ r.rName }}</th>
+                    <td>{{ r.rAge }}</td>
+                    <td>{{ r.rGrade }}</td>
+                </tr>
+            </tbody>
+          </table>
+          </div>
+      </div>
+    </main>
+    <footer class="row">
+      Indiana Soccer Referees Association | (123) 456-7890 | 123 Real Plaza
+    </footer>
+    </div>
+  </body>
+    <script src="js/referee.js"></script>
+  </body>
+</html>

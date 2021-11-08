@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Smart Hand Trucks, Inc.</title>
+    <title>ISRA</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js">
     </script>
@@ -26,9 +26,11 @@
           </div>
           <div class="collapse navbar-collapse" id="mymenu">
            <ul class= "nav navbar-nav">
-            <li><a id="homelink"href="index.html">Home</a></li>  
+            <li><a id="homelink"href="index.html">Home</a></li>
+            <li><a id="homelink"href="user.html">View referees</a></li> 
            </ul>
            <ul class="nav navbar-nav navbar-right">
+            <li><a href="assignorHome.html">Assignor Access</a></li>
             <li><a href="refhome.html">Referee Access</a></li> 
             <li>
               <a id="loginApp" href="signin.html"><button class="btn btn-info" id="sign-in-button" v-on:click="signIn">Sign in</button></a>
@@ -39,13 +41,8 @@
     </header>
     <main class="row">
       <div class="page">
-        <div style="height:230px">
-        </div>
-        <p class="title-text">Indiana Soccer Referees Association</p>
-        <p class="classify-text">If you're an assignor, you're on the right page</p>
-        <div class="descriptive-text">
-          <p>Go Hoosiers!</p>
-        </div>
+        <a href="assignorRef.html">View Referees</a>
+        <a href="assignorGames.html">View Games</a>
       </div>
     </main>
     <footer class="row">
@@ -53,6 +50,6 @@
     </footer>
     </div>
   </body>
-    <script src="script.js"></script>
+    <script src="js/referee.js"></script>
   </body>
 </html>

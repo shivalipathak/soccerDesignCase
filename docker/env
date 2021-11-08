@@ -1,0 +1,4 @@
+MYSQL_DATABASE=final_project
+MYSQL_HOST=db-server-1.cqjy73c2vcm8.us-east-2.rds.amazonaws.com
+MYSQL_USER=mschonfe
+MYSQL_PASSWORD=Longbeachsurgical!123

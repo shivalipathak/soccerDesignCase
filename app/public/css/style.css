@@ -10,6 +10,7 @@
   font-size: large;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
   font-style: italic;
+  margin-top: 6%;
 }
 
 
@@ -115,7 +116,8 @@ nav{
 .descriptive-text {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
   color: maroon;
-  font-size: medium;
+  font-size: x-large;
+  font-weight: bold;
   margin-top: 30px;
   text-align: center;
 }
@@ -147,9 +149,21 @@ footer {
     margin-right: 20px;
 }
 
-table {
+#refereeTable {
   border-top:none;
   border:none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+th{
+  text-align: center;
+}
+
+td{
+  text-align: center;
 }
 
 .product-image {
