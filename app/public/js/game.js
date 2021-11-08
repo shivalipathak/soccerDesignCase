@@ -64,15 +64,15 @@ const gameApp = {
                 this.resetGameForm();
               });
           },
-        postDeleteGame(ref) {
+        postDeleteGame(g) {
             if (!confirm("Are you sure you want to delete the referee record?")) {
               return;
             }
-            console.log("Delete!", ref);
+            console.log("Delete!", g);
     
             fetch('api/game/delete.php', {
                 method:'POST',
-                body: JSON.stringify(ref),
+                body: JSON.stringify(g),
                 headers: {
                   "Content-Type": "application/json; charset=utf-8"
                 }
@@ -87,11 +87,11 @@ const gameApp = {
                 this.resetGameForm();
               });
           },
-          selectedGameToEdit(ref) {
-            this.selectedGame = ref;
+          selectedGameToEdit(g) {
+            this.selectedGame = g;
             this.gameForm = Object.assign({}, this.selectedGame);
           },
-          resetRefForm() {
+          resetGameForm() {
               this.selectedGame = null;
               this.gameForm = {};
           }

@@ -2,11 +2,10 @@ const assignApp = {
     data() {
         return {
             result: undefined,
-            games: [],
             assignments:[],
+            games: [],
             app:0,
-            gameForm: {},
-            selectedAssignment: {},
+            selectedAssignment: null,
             selectedGame: null,
             assignment_form: {},
             referees: [],
@@ -27,8 +26,8 @@ const assignApp = {
         },
         fetchAssignmentData(g){
             
-            console.log('Here in Fetch.');
-              fetch('/api/assignment?Game=' + g.gameId)
+            console.log('Here in Fetch.', g);
+              fetch('/api/assignment/?Game=' + g)
               .then( response => response.json() )
               .then( (responseJson) => {
                   console.log(responseJson);
@@ -47,7 +46,8 @@ const assignApp = {
             console.log(s);
             this.assignments = [];
             console.log('Here in Select.');
-            this.fetchAssignmentData(this.selectedGame);
+            console.log(this.selectedGame.gameId);
+            this.fetchAssignmentData(this.selectedGame.gameId);
         },
         postAssignment(evt) {
             console.log ("Test:", this.selectedAssignment);

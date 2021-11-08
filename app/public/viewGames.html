@@ -47,7 +47,6 @@
             <thead>
                 <tr>
                     <th scope="col" class="table-header">Game Name</th>
-                    <th scope="col" class="table-header">Referee ID</th>
                     <th scope="col" class="table-header">Field</th>
                     <th scope="col" class="table-header">Date</th>
                     <th scope="col" class="table-header">Time</th>
@@ -57,10 +56,9 @@
             <tbody v-for="g in games">
                 <tr>
                     <th scope="row">{{ g.gameId }}</th>
-                    <td>{{ g.refereeId }}</td>
                     <td>{{ g.field }}</td>
-                    <td>{{ g.date }}</td>
-                    <td>{{ g.time }}</td>
+                    <td>{{ g.gDate }}</td>
+                    <td>{{ g.gTime }}</td>
                 </tr>
             </tbody>
           </table>

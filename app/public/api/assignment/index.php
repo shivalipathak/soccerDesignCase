@@ -8,21 +8,16 @@ $db = DbConnection::getConnection();
 $sql='SELECT * FROM game';
 $vars = [];
 
-if (isset($_GET['Game'])) {
-    $sql = 'SELECT * FROM game g, referee r, refereeAssignPosition rap 
-    where g.refereeId = r.refereeId and r.refereeId = rap.refereeId and g.gameId = ?';
-    console.log("join call");
-    $stmt->execute([
-        $_POST['gameId']
-      ]);
-    //$vars = [ $_GET['Game'] ];
-}
-
-
-
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
+ if (isset($_GET['Game'])) {
+     $sql = 'SELECT rName, rGrade, rSkill, rPosition FROM refereeAssignPosition rap, referee r where rap.refereeId = r.refereeId and rap.gameId = ? ';
+     $stmt->execute([       
+         $_POST['gameId']
+       ]);
+     $vars = [ $_GET['Game'] ];
+ }
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);

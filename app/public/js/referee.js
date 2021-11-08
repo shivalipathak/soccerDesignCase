@@ -47,7 +47,6 @@ const refereeApp = {
             }
           },
         postEditRef(evt) {
-          alert(this.refForm.refereeId);
             fetch('api/referee/update.php', {
                 method:'POST',
                 body: JSON.stringify(this.refForm),

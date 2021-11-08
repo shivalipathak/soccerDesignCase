@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <!-- VueJs link -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <title>Your Reports</title>
+  <!-- <link rel="stylesheet" href="css/site.css"> -->
+</head>
+
+<header>
+    <nav class="row navbar navbar-default">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+  </div>
+  <div class="collapse navbar-collapse" id="mymenu">
+   <ul class= "nav navbar-nav">
+    <li><a id="homelink"href="index.html">Home</a></li>
+    <li><a id="homelink"href="user.html">View referees</a></li>
+    <li><a id="homelink"href="viewGames.html">View games</a></li>  
+    <li><a id="homelink"href="reports.html">View reports</a></li>
+   </ul>
+   <ul class="nav navbar-nav navbar-right">
+    <li><a href="assignorHome.html">Assignor Access</a></li>
+    <li><a href="refhome.html">Referee Access</a></li> 
+    <li>
+      <a id="loginApp" href="signin.html"><button class="btn btn-info" id="sign-in-button" v-on:click="signIn">Sign in</button></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <body>
+
+  <div id="repsApp">
+        <div class = "reports">
+          <form v-on:submit.prevent="fetchGamesData()">
+            <span class="refs">Select a Referee</span><br>
+          <label for="refereeId" class="col-sm-2 col-form-label">Referee</label>
+          <select name="refs" id="refereeId
+          
+          ]]]]]]]]]]]]
+          
+          ]
+          
+          
+          
+          
+          
+          
+          
+          ]
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          ]]]]]]]
+          
+          
+          
+          ]
+          
+          ]\\" v-model="refereeForm.refereeId" class = "btn btn-secondary dropdown-toggle">
+          <option v-bind:value="r.refereeId" v-for="r in refs">{{r.rName}}</option>
+          </select><br>
+          <div class="form-group">
+            <label for="startDate" class="form-label">From </label>
+            <input type="date" v-model="refereeForm.startDate" class="form-control" id="refForm.startDate">
+          </div>
+          <div class="form-group">
+            <label for="endDate" class="form-label">To </label>
+            <input type="date" v-model="refereeForm.endDate" class="form-control" id="refForm.endDate">
+          </div><br>
+            <button type="submit" class="btn btn-outline-secondary btn-sm">Generate Report</button>
+          </form>
+        </div>
+
+
+       <div v-if="reportOne"> 
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Game</th>
+              <th>Field</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+            <tbody>
+                <tr v-for="g in games">
+                    <td>{{ g.gameId }}</td>
+                    <td>{{ g.field }}</td>
+                    <td>{{ g.gDate }} at {{g.gTime}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><a class = "reports" v-bind:href="'/api/reports/?ref=' + selectedReferee + '&startDate=' + refereeForm.startDate + '&endDate=' + refereeForm.endDate + '&format=csv'" download>Export as CSV</a></p><hr>
+      </div>
+        <p><a v-bind:href="'/api/reports/?ref=' + selectedReferee + '&format=csv'" download>Export as CSV</a></p>
+    
+        <hr>
+            <table id="" class="table table-hover table-light" >
+                <thead>
+                    <tr>
+                        <th scope="col">Game</th>
+                        <th scope="col">Field</th>
+                        <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="g in game">
+                      <td>{{ g.gameId }}</td>
+                      <td>{{ g.field }}</td>
+                      <td>{{ g.gDate }} at {{ g.time }}</td>
+                    </tr>         
+                  </tbody>
+                  <form v-on:submit.prevent="fetchGameData()">
+                    <button type="submit" class="btn btn-outline-secondary btn-sm">Generate Report</button>
+                  </form>
+                  <p><a href="/api/reports/unassigned.php/?&format=csv" download>Export as CSV</a></p>
+            </table>
+    </div>
+  </div>
+
+    <script src="js/reports.js"></script>
+</body>
+
+
+
+</html>
