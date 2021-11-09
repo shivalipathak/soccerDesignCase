@@ -8,19 +8,15 @@ $db = DbConnection::getConnection();
 $sql='SELECT * FROM game';
 $vars = [];
 
-$stmt = $db->prepare($sql);
-$stmt->execute($vars);
-
- if (isset($_GET['Game'])) {
-     $sql = 'SELECT rName, rGrade, rSkill, rPosition FROM refereeAssignPosition rap, referee r where rap.refereeId = r.refereeId and rap.gameId = ? ';
-     $stmt->execute([       
-         $_POST['gameId']
-       ]);
-     $vars = [ $_GET['Game'] ];
+if (isset($_GET['game'])) {
+// This is an example of a parameterized query
+    $sql = 'SELECT r.refereeId, rName, rPosition, status FROM refereeAssignPosition rap INNER JOIN referee r ON rap.refereeId = r.refereeId and rap.gameId = ? ';
+    $vars = [ $_GET['game'] ];
  }
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
+
 $assignments = $stmt->fetchAll();
 
 

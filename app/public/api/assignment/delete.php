@@ -17,12 +17,13 @@ require("class/DbConnection.php");
 $db = DbConnection::getConnection();
 
 $stmt = $db->prepare(
-  'DELETE FROM assignment WHERE id = ?'
+  'DELETE FROM refereeAssignPosition WHERE refereeId = ? and gameId = ?'
 );
 
 $stmt->execute([
-  $_POST['id']
+  $_POST['refereeId'],
+  $_POST['gameId']
 ]);
 
 header('HTTP/1.1 303 See Other');
-header('Location: ../assignment/?Game=' . $_POST['gameid']);
+header('Location: ../assignment/');
