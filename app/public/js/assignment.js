@@ -81,6 +81,7 @@ const assignApp = {
               .then( json => {
                   console.log("Returned from post:", json);
                   this.assignments = json;
+                  this.fetchAssignmentData(this.selectedGame);
                   this.handleResetEditAssignment();
               })
               .catch( err => {
