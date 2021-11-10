@@ -101,7 +101,7 @@ const assignApp = {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
                 this.assignments = json;
-      
+                this.fetchAssignmentData(this.selectedGame);
                 // reset the form
                 this.handleResetEditAssignment();
                 });
@@ -134,10 +134,10 @@ const assignApp = {
             this.selectedGame = g;
             this.gameForm = Object.assign({}, this.selectedGame);
             },
-            resetRefForm() {
-              this.selectedGame = null;
-              this.gameForm = {};
-            },
+            // resetGameForm() {
+            //   this.selectedGame = null;
+            //   this.gameForm = {};
+            // },
             handleEditAssignment(assignment) {
             console.log("selecting", assignment);
             this.selectedAssignment = assignment;

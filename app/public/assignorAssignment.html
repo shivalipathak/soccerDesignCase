@@ -56,7 +56,7 @@
 
             <tbody v-for="g in games" v-on:click.prevent="selectGame(g)" :class="['Game', {selected: selectedGame && g.gameId == selectedGame.gameId}]">
                 <tr>
-                    <th scope="row">{{ g.gameId }}</th>
+                    <td>{{ g.gameId }}</td>
                     <td>{{ g.field }}</td>
                     <td>{{ g.gDate }}</td>
                     <td>{{ g.gTime }}</td>

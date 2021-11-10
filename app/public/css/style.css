@@ -1,8 +1,6 @@
 
 
-.sidecolumn {
-  height: 660px;
-}
+
 
 .classify-text{
   color: maroon;
@@ -174,39 +172,21 @@ footer {
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+  color: white;
 }
 
 th{
   text-align: center;
+  background-color: maroon;
 }
 
 td{
   text-align: center;
+  color: black;
 }
 
-.product-image {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 250px;
-}
-
-.product {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 400px;
-}
-
-.product-image-desc {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
-  text-align: center;
-  color: #e6661c;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.product-image:hover {
-  width: 300px;
+tr:hover{
+  background-color: maroon;
 }
 
 form {
@@ -226,12 +206,10 @@ textarea{
   height: 30%;
 }
 
-.button {
-  background-color: #eeeeee;
+button {
+  background-color: maroon;
+  color: white;
   border-style: solid;
-  border-color:black;
-  border-width: 1pt;
-  color:black;
   padding: 5pt;
   border-radius: 0pt;
 }
@@ -262,6 +240,37 @@ label {
     color: white;
 }
 
+#whistle-image{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#ball-image{
+  margin-left: 60px;
+  margin-right: 50px;
+  margin-top: 100px;
+}
+
+#field-image{
+  margin-top: 110px;
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
+#midPanel{
+  height: 470px;
+  margin-top: 70px;
+  background-color: maroon;
+}
+
+#sign-in-form{
+  background-color: white;
+}
+
+#label-image{
+text-align: center;
+}
+
 .btn-form {
     width: 100%;
     margin-top: 20px;
@@ -272,6 +281,11 @@ h3 {
   color: maroon;
   margin-bottom: 20px;
   font-weight: bold;
+}
+
+.btn-light{
+  padding: 10px;
+  margin-left: 33%;
 }
 
 .btn-primary {
@@ -289,17 +303,7 @@ h3 {
   margin-left: 20%;
 }
 
-.input-group-addon {
-    padding: 6px 10px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    color: #555;
-    text-align: center;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+
 
 .table-left {
   width: 20%;
@@ -323,18 +327,13 @@ html, body {
   height: 100%;
 }
 
-.empsheet{
-  color: #e6661c;
-  text-align: center;
-}
+
 
 .sign-up-table {
   padding: 10px;
 }
 
-.productselect{
-  background-color: none;
-}
+
 
 form {
     background-color: maroon;
@@ -344,11 +343,7 @@ form {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.product-img-individual {
-  width: 300px;
-  margin-left: 7%;
-  margin-top: 20%;
-}
+
 .confirmationbutton{
   background-color:#e6661c;
   color: aliceblue;
@@ -371,19 +366,11 @@ form {
   
 }
 
-.add_form_field {
-  margin-bottom: 20px;
-  margin-top: 10px;
+#games-button{
+  margin-top: 25px;
 }
 
-.place-order {
-  text-align: center;
+#assignment-button{
+  margin-top: 27px;
 }
 
-.place-order-selectors {
-  margin-left: 5px;
-}
-
-.delete {
-  margin-left: 10px;
-}
