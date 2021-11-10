@@ -46,6 +46,7 @@
         <table id="refereeTable" class="table table-hover table-dark">
             <thead>
                 <tr>
+                  <th scope="col" class="table-header">Refereee ID</th>
                     <th scope="col" class="table-header">Refereee Name</th>
                     <th scope="col" class="table-header">Referee Age</th>
                     <th scope="col" class="table-header">Referee Grade</th>
@@ -54,7 +55,8 @@
 
             <tbody v-for="r in referees">
                 <tr>
-                    <th scope="row">{{ r.rName }}</th>
+                    <th scope="row">{{ r.refereeId }}</th>
+                    <td>{{ r.rName }}</td>
                     <td>{{ r.rAge }}</td>
                     <td>{{ r.rGrade }}</td>
                 </tr>
