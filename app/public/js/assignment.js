@@ -125,7 +125,7 @@ const assignApp = {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
                 this.assignments = json;
-                
+                this.fetchAssignmentData(this.selectedGame);
                 // reset the form
                 this.handleResetEditAssignment();
                 });
