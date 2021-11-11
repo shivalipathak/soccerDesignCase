@@ -82,10 +82,14 @@ const refereeApp = {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
                 this.referees = json;
-    
+                this.fetchRefereeData();
                 // reset the form
                 this.resetRefForm();
-              });
+              })
+              .catch( (err) => {
+                console.error(err);
+                alert("Referee assigned to a game. Cannot be deleted.")
+            });
           },
           selectedRefToEdit(ref) {
             this.selectedRef = ref;

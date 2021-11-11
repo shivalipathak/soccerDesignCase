@@ -68,7 +68,7 @@ const gameApp = {
             if (!confirm("Are you sure you want to delete the referee record?")) {
               return;
             }
-            console.log("Delete!", g);
+            console.log("Delete!");
     
             fetch('api/game/delete.php', {
                 method:'POST',
@@ -82,7 +82,7 @@ const gameApp = {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
                 this.games = json;
-    
+                this.fetchGameData();
                 // reset the form
                 this.resetGameForm();
               });
